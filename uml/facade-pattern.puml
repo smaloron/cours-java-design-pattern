@@ -1,0 +1,43 @@
+@startuml
+!theme vibrant
+title "Diagramme du Pattern Facade"
+
+class Client
+
+class Facade {
+
+- subsystemA: SubSystemA
+- subsystemB: SubSystemB
+- subsystemC: SubSystemC
+
++ operation(): void
+  }
+  note right: La Façade fournit une méthode\nsimple qui orchestre le sous-système.
+
+package "Sous-système Complexe" {
+class SubSystemA {
+
++ operationA1(): void
+  }
+  class SubSystemB {
++ operationB2(): void
+  }
+  class SubSystemC {
++ operationC3(): void
+  }
+  }
+
+Client -> Facade
+
+Facade -> SubSystemA
+Facade -> SubSystemB
+Facade -> SubSystemC
+
+note on link
+Le client n'interagit
+qu'avec la Façade.
+end note
+
+note "operation() {\n subsystemA.operationA1();\n subsystemB.operationB2();\n subsystemC.operationC3();\n}" as N1
+Facade .. N1
+@enduml

@@ -1,0 +1,54 @@
+@startuml
+!theme vibrant
+title "Architecture du Système de Promotions"
+
+class ClientController
+participant Facade as "PromotionFacade"
+participant PromoService as "PromotionService"
+participant NotifierFactory as "NotifierFactory"
+participant Notifier as "Notifier"
+participant Strategy as "PromotionStrategy"
+
+ClientController -> Facade : launchCampaign(promo, users, channel)
+activate Facade
+
+loop pour chaque utilisateur
+Facade -> PromoService : applyPromotion(promo, user)
+activate PromoService
+PromoService -> Strategy : generateMessage(user)
+activate Strategy
+Strategy --> PromoService : message
+deactivate Strategy
+PromoService --> Facade : message
+deactivate PromoService
+
+    Facade -> NotifierFactory : getNotifier(channel)
+    activate NotifierFactory
+    NotifierFactory --> Facade : notifier
+    deactivate NotifierFactory
+
+    Facade -> Notifier : send(user, message)
+    activate Notifier
+    deactivate Notifier
+
+end
+
+Facade --> ClientController : ok
+deactivate Facade
+
+package "Promotion Strategies" {
+interface PromotionStrategy { generateMessage() }
+class DiscountStrategy implements PromotionStrategy
+class ThreeForTwoStrategy implements PromotionStrategy
+}
+
+package "Notification" {
+interface Notifier { send() }
+class EmailNotifier implements Notifier
+class SmsNotifier implements Notifier
+}
+
+PromoService o-- PromotionStrategy
+Facade o-- PromoService
+Facade o-- NotifierFactory
+@enduml

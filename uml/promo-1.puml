@@ -1,0 +1,38 @@
+@startuml
+!theme vibrant
+title "Séquence de Lancement d'une Campagne de Promotion"
+
+' Tous les éléments sont des "participant" ou "actor"
+participant ClientController
+participant Facade as "PromotionFacade"
+participant PromoService as "PromotionService"
+participant NotifierFactory as "NotifierFactory"
+participant Notifier as "Notifier"
+participant Strategy as "PromotionStrategy"
+
+ClientController -> Facade : launchCampaign(promo, users, channel)
+activate Facade
+
+loop pour chaque utilisateur
+Facade -> PromoService : applyPromotion(promo, user)
+activate PromoService
+PromoService -> Strategy : generateMessage(user)
+activate Strategy
+Strategy --> PromoService : message
+deactivate Strategy
+PromoService --> Facade : message
+deactivate PromoService
+
+Facade -> NotifierFactory : getNotifier(channel)
+activate NotifierFactory
+NotifierFactory --> Facade : notifier
+deactivate NotifierFactory
+
+Facade -> Notifier : send(user, message)
+activate Notifier
+deactivate Notifier
+end
+
+Facade --> ClientController : ok
+deactivate Facade
+@enduml

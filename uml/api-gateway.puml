@@ -1,0 +1,32 @@
+@startuml
+!theme vibrant
+title "Pattern API Gateway"
+
+actor Client
+participant Gateway as "API Gateway"
+
+box "Backend Services" {
+participant S1 as "Service A"
+participant S2 as "Service B"
+end box
+
+Client -> Gateway : /api/composite/123
+activate Gateway
+
+Gateway -> S1 : /a/123
+activate S1
+S1 --> Gateway : Réponse A
+deactivate S1
+
+Gateway -> S2 : /b/123
+activate S2
+S2 --> Gateway : Réponse B
+deactivate S2
+
+' --- CORRECTION ICI ---
+' On utilise une note pour décrire une action interne au participant.
+note over Gateway: Agrège les réponses A et B
+
+Gateway --> Client : Réponse finale
+deactivate Gateway
+@enduml

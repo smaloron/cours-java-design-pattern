@@ -1,0 +1,33 @@
+@startuml
+!theme vibrant
+title "Architecture du Système de Promotions"
+
+class ClientController
+class PromotionFacade as "Facade"
+class PromotionService
+class NotifierFactory
+
+package "Promotion Strategies" {
+interface PromotionStrategy {
++ generateMessage()
+}
+class DiscountStrategy implements PromotionStrategy
+class ThreeForTwoStrategy implements PromotionStrategy
+}
+
+package "Notification" {
+interface Notifier {
++ send()
+}
+class EmailNotifier implements Notifier
+class SmsNotifier implements Notifier
+}
+
+' Définition des relations structurelles
+ClientController .> Facade : utilise
+Facade o-- PromotionService
+Facade o-- NotifierFactory
+PromotionService o-- PromotionStrategy
+NotifierFactory ..> Notifier : crée
+
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+!theme vibrant
+title "Diagramme du Pattern Abstract Factory"
+
+interface AbstractProductA { }
+class ConcreteProductA1 implements AbstractProductA
+class ConcreteProductA2 implements AbstractProductA
+
+interface AbstractProductB { }
+class ConcreteProductB1 implements AbstractProductB
+class ConcreteProductB2 implements AbstractProductB
+
+interface AbstractFactory {
+
++ createProductA(): AbstractProductA
++ createProductB(): AbstractProductB
+  }
+
+class ConcreteFactory1 implements AbstractFactory {
+
++ createProductA(): AbstractProductA
++ createProductB(): AbstractProductB
+  }
+  class ConcreteFactory2 implements AbstractFactory {
++ createProductA(): AbstractProductA
++ createProductB(): AbstractProductB
+  }
+
+ConcreteFactory1 ..> ConcreteProductA1 : crée
+ConcreteFactory1 ..> ConcreteProductB1 : crée
+ConcreteFactory2 ..> ConcreteProductA2 : crée
+ConcreteFactory2 ..> ConcreteProductB2 : crée
+
+Client -> AbstractFactory
+Client -> AbstractProductA
+Client -> AbstractProductB
+
+@enduml
+

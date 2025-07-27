@@ -1,0 +1,43 @@
+@startuml
+!theme vibrant
+title "Diagramme du Pattern Decorator"
+
+interface Component {
+
+operation(): void
+}
+class ConcreteComponent implements Component {
+
+operation(): void
+}
+abstract class Decorator implements Component {
+
+wrapped: Component
+Decorator(c: Component)
+operation(): void
+}
+note right: Le décorateur implémente la même\ninterface que l'objet qu'il décore.
+class ConcreteDecoratorA extends Decorator {
+
+operation(): void
+addedBehavior(): void
+}
+class ConcreteDecoratorB extends Decorator {
+
+operation(): void
+}
+Client -d-> Component
+
+Decorator o-u- Component
+note on link
+Composition : le décorateur
+"enveloppe" un autre Component.
+end note
+
+ConcreteDecoratorA -u-|> Decorator
+ConcreteDecoratorB -u-|> Decorator
+ConcreteComponent .u.|> Component
+
+
+
+@enduml

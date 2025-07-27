@@ -1,0 +1,40 @@
+@startuml
+!theme vibrant
+title "Diagramme de Séquence - Architecture MVC"
+
+actor User as "Utilisateur"
+
+participant "View" as V
+participant "Controller" as C
+participant "Model" as M
+
+autonumber
+
+User -> V: Interagit avec l'interface (ex: clique sur un bouton "Sauvegarder")
+activate V
+
+V -> C: Appelle une méthode du contrôleur (ex: sauvegarderDonnees(data))
+activate C
+' --- CORRECTION ICI ---
+' On utilise l'alias "C" et non le nom complet "Controller"
+note right of C: Le contrôleur reçoit la requête de la vue.
+
+C -> M: Met à jour le modèle avec les nouvelles données
+activate M
+
+M --> C: Confirme la mise à jour
+deactivate M
+
+C --> V: Notifie la vue que le modèle a changé
+deactivate C
+
+V -> M: Demande les données à jour au modèle
+activate M
+
+M --> V: Renvoie les données à jour
+deactivate M
+
+V -> User: Met à jour l'affichage pour l'utilisateur
+deactivate V
+
+@enduml
