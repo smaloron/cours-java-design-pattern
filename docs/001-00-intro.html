@@ -1,0 +1,274 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2025-07-28T16:55:43.817483"><title>Introduction aux Design Patterns | Java-design-pattern</title><script type="application/json" id="virtual-toc-data">[{"id":"objectifs-p-dagogiques","level":0,"title":"Objectifs Pédagogiques","anchor":"#objectifs-p-dagogiques"},{"id":"introduction-pourquoi-s-int-resser-aux-design-patterns","level":0,"title":"Introduction : Pourquoi s\u0027intéresser aux Design Patterns ?","anchor":"#introduction-pourquoi-s-int-resser-aux-design-patterns"},{"id":"l-essentiel-les-fondations","level":0,"title":"L\u0027essentiel : Les Fondations","anchor":"#l-essentiel-les-fondations"},{"id":"pour-aller-plus-loin-introduction-aux-principes-s-o-l-i-d","level":0,"title":"Pour aller plus loin : Introduction aux Principes S.O.L.I.D.","anchor":"#pour-aller-plus-loin-introduction-aux-principes-s-o-l-i-d"},{"id":"pr-paration-du-projet-fil-rouge","level":0,"title":"Préparation du Projet \"Fil Rouge\"","anchor":"#pr-paration-du-projet-fil-rouge"},{"id":"exercice-1-analyse-d-un-code-smell","level":0,"title":"Exercice 1 : Analyse d\u0027un \"Code Smell\"","anchor":"#exercice-1-analyse-d-un-code-smell"},{"id":"auto-valuation","level":0,"title":"Auto-évaluation","anchor":"#auto-valuation"},{"id":"conclusion","level":0,"title":"Conclusion","anchor":"#conclusion"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Introduction aux Design Patterns | Java-design-pattern"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Java-design-pattern Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/001-00-intro.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Introduction aux Design Patterns | Java-design-pattern"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/001-00-intro.html#webpage",
+    "url": "writerside-documentation/001-00-intro.html",
+    "name": "Introduction aux Design Patterns | Java-design-pattern",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Java-design-pattern Help"
+}</script><!-- End Schema.org --></head><body data-id="001-00-intro" data-main-title="Introduction aux Design Patterns" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs=""><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Java-design-pattern  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="001-00-intro" id="001-00-intro.md">Introduction aux Design Patterns</h1><section class="chapter"><h2 id="objectifs-p-dagogiques" data-toc="objectifs-p-dagogiques">Objectifs P&eacute;dagogiques</h2><p id="-77vrpi_11">&Agrave; la fin de ce module, vous serez capable de :</p><ul class="list _bullet" id="-77vrpi_12"><li class="list__item" id="-77vrpi_13"><p id="-77vrpi_18"><span class="control" id="-77vrpi_19">D&eacute;finir</span> ce qu'est un &quot;Design Pattern&quot; et ce qu'il n'est pas.</p></li><li class="list__item" id="-77vrpi_14"><p id="-77vrpi_20"><span class="control" id="-77vrpi_21">Expliquer</span> l'origine des patterns et l'importance du &quot;Gang of Four&quot;.</p></li><li class="list__item" id="-77vrpi_15"><p id="-77vrpi_22"><span class="control" id="-77vrpi_23">Identifier</span> les b&eacute;n&eacute;fices concrets de l'utilisation des patterns dans un projet.</p></li><li class="list__item" id="-77vrpi_16"><p id="-77vrpi_24"><span class="control" id="-77vrpi_25">Classifier</span> les patterns dans leurs trois grandes familles : Cr&eacute;ation, Structure et Comportement.</p></li><li class="list__item" id="-77vrpi_17"><p id="-77vrpi_26"><span class="control" id="-77vrpi_27">Comprendre</span> les bases de la notation UML pour lire et dessiner des diagrammes de classes.</p></li></ul></section><section class="chapter"><h2 id="introduction-pourquoi-s-int-resser-aux-design-patterns" data-toc="introduction-pourquoi-s-int-resser-aux-design-patterns">Introduction : Pourquoi s'int&eacute;resser aux Design Patterns ?</h2><p id="-77vrpi_28">Imaginez que vous &ecirc;tes un architecte. Allez-vous r&eacute;inventer la mani&egrave;re de construire un mur porteur, une fen&ecirc;tre ou un escalier pour chaque nouvelle maison ? Probablement pas. Vous allez utiliser des solutions &eacute;prouv&eacute;es, comprises par tous les corps de m&eacute;tier, qui garantissent la solidit&eacute;, la s&eacute;curit&eacute; et l'efficacit&eacute; de la construction.</p><p id="-77vrpi_29">En d&eacute;veloppement logiciel, c'est exactement la m&ecirc;me id&eacute;e ! Les <span class="control" id="-77vrpi_33">Design Patterns</span> (ou Patrons de Conception) sont des * <span class="emphasis" id="-77vrpi_34">solutions &eacute;prouv&eacute;es &agrave; des probl&egrave;mes de conception r&eacute;currents</span>*.</p><p id="-77vrpi_30">Vous avez probablement d&eacute;j&agrave; rencontr&eacute; des situations complexes :</p><ul class="list _bullet" id="-77vrpi_31"><li class="list__item" id="-77vrpi_35"><p id="-77vrpi_38">Un code qui devient un v&eacute;ritable &quot;plat de spaghettis&quot;, o&ugrave; tout est m&eacute;lang&eacute;.</p></li><li class="list__item" id="-77vrpi_36"><p id="-77vrpi_39">L'ajout d'une petite fonctionnalit&eacute; qui vous oblige &agrave; modifier des dizaines de fichiers.</p></li><li class="list__item" id="-77vrpi_37"><p id="-77vrpi_40">Des difficult&eacute;s &agrave; expliquer la structure de votre code &agrave; un nouveau membre de l'&eacute;quipe.</p></li></ul><p id="-77vrpi_32">Les Design Patterns sont vos plans d'architecte. Ils vous fournissent un vocabulaire commun et des strat&eacute;gies &eacute;l&eacute;gantes pour construire des applications robustes, flexibles et faciles &agrave; maintenir. Ce cours est votre guide pour apprendre &agrave; lire ces plans et &agrave; les utiliser pour devenir un meilleur concepteur d'applications.</p></section><section class="chapter"><h2 id="l-essentiel-les-fondations" data-toc="l-essentiel-les-fondations">L'essentiel : Les Fondations</h2><section class="chapter"><h3 id="qu-est-ce-qu-un-design-pattern" data-toc="qu-est-ce-qu-un-design-pattern">Qu'est-ce qu'un Design Pattern ?</h3><p id="-77vrpi_45">Un Design Pattern n'est pas un morceau de code que vous pouvez copier-coller. C'est une <span class="control" id="-77vrpi_48">description ou un mod&egrave;le</span> pour r&eacute;soudre un probl&egrave;me dans un contexte particulier. Pensez-y comme une recette de cuisine :</p><ul class="list _bullet" id="-77vrpi_46"><li class="list__item" id="-77vrpi_49"><p id="-77vrpi_52"><span class="control" id="-77vrpi_53">Le Probl&egrave;me :</span> Vous avez faim et voulez un g&acirc;teau au chocolat (ex: vous devez cr&eacute;er des objets mais le type exact n'est connu qu'&agrave; l'ex&eacute;cution).</p></li><li class="list__item" id="-77vrpi_50"><p id="-77vrpi_54"><span class="control" id="-77vrpi_55">La Recette (le Pattern) :</span> Elle vous donne la liste des ingr&eacute;dients (classes, interfaces), les &eacute;tapes (m&eacute;thodes &agrave; appeler) et le r&eacute;sultat attendu (un objet bien configur&eacute;, un code flexible).</p></li><li class="list__item" id="-77vrpi_51"><p id="-77vrpi_56"><span class="control" id="-77vrpi_57">Votre Impl&eacute;mentation :</span> Vous suivez la recette, mais vous pouvez choisir du chocolat noir ou au lait, ajouter des noix... Vous adaptez la recette &agrave; votre besoin pr&eacute;cis.</p></li></ul><aside class="prompt" data-type="tip" data-title="" id="-77vrpi_47"><p>Un pattern est une solution formalis&eacute;e et r&eacute;utilisable. Ce n'est **ni un algorithme** (il d&eacute;crit la structure, pas une suite d'op&eacute;rations pr&eacute;cises), **ni une biblioth&egrave;que** (c'est une id&eacute;e, pas du code concret).</p></aside></section><section class="chapter"><h3 id="une-br-ve-histoire-le-gang-of-four-gof" data-toc="une-br-ve-histoire-le-gang-of-four-gof">Une Br&egrave;ve Histoire : Le &quot;Gang of Four&quot; (GoF)</h3><p id="-77vrpi_58">En 1994, quatre informaticiens de g&eacute;nie &ndash; Erich Gamma, Richard Helm, Ralph Johnson et John Vlissides &ndash; ont publi&eacute; un livre qui a tout chang&eacute; : <span class="control" id="-77vrpi_61">&quot;Design Patterns: Elements of Reusable Object-Oriented Software&quot;</span>.</p><p id="-77vrpi_59">On les surnomme affectueusement le <span class="control" id="-77vrpi_62">&quot;Gang of Four&quot; (GoF)</span>.</p><p id="-77vrpi_60">Leur livre a catalogu&eacute; 23 patterns fondamentaux, leur a donn&eacute; un nom et a fourni un format standardis&eacute; pour les d&eacute;crire. En faisant cela, ils ont cr&eacute;&eacute; un <span class="control" id="-77vrpi_63">vocabulaire commun</span> essentiel pour les d&eacute;veloppeurs du monde entier. Dire &quot;Ici, on pourrait utiliser un Singleton&quot; est bien plus rapide et pr&eacute;cis que de d&eacute;crire tout le m&eacute;canisme pendant 10 minutes.</p></section><section class="chapter"><h3 id="les-b-n-fices-concrets" data-toc="les-b-n-fices-concrets">Les B&eacute;n&eacute;fices Concrets</h3><p id="-77vrpi_64">Pourquoi devriez-vous investir du temps &agrave; apprendre ces patterns ?</p><ul class="list _bullet" id="-77vrpi_65"><li class="list__item" id="-77vrpi_66"><p id="-77vrpi_70"><span class="control" id="-77vrpi_71">Maintenabilit&eacute; :</span> Un code structur&eacute; autour de patterns connus est plus facile &agrave; comprendre pour vous et pour les autres. Le faire &eacute;voluer devient moins risqu&eacute;.</p></li><li class="list__item" id="-77vrpi_67"><p id="-77vrpi_72"><span class="control" id="-77vrpi_73">Flexibilit&eacute; et Extensibilit&eacute; :</span> Les patterns sont con&ccedil;us pour d&eacute;coupler les composants de votre application. Ajouter une nouvelle fonctionnalit&eacute; se fait souvent en ajoutant une nouvelle classe, sans modifier le code existant ( le fameux Principe Ouvert/Ferm&eacute;).</p></li><li class="list__item" id="-77vrpi_68"><p id="-77vrpi_74"><span class="control" id="-77vrpi_75">R&eacute;utilisabilit&eacute; :</span> Les patterns sont des solutions qui ont fait leurs preuves dans d'innombrables projets. Vous b&eacute;n&eacute;ficiez de l'exp&eacute;rience de milliers de d&eacute;veloppeurs.</p></li><li class="list__item" id="-77vrpi_69"><p id="-77vrpi_76"><span class="control" id="-77vrpi_77">Communication :</span> Ils cr&eacute;ent un langage commun au sein de votre &eacute;quipe, ce qui rend les discussions sur l'architecture et la conception beaucoup plus efficaces.</p></li></ul></section><section class="chapter"><h3 id="les-trois-grandes-familles-de-patterns" data-toc="les-trois-grandes-familles-de-patterns">Les Trois Grandes Familles de Patterns</h3><p id="-77vrpi_78">Le GoF a organis&eacute; les 23 patterns en trois cat&eacute;gories, selon leur intention. C'est une excellente mani&egrave;re de s'y retrouver.</p><div class="tabs" id="-77vrpi_79" data-anchors="[-77vrpi_80,-77vrpi_81,-77vrpi_82]"><div class="tabs__content" data-gtm="tab" id="-77vrpi_80" data-title="Patterns de Cr&eacute;ation"><p id="-77vrpi_83"><b id="-77vrpi_87">Leur r&ocirc;le :</b> G&eacute;rer la cr&eacute;ation d'objets de mani&egrave;re contr&ocirc;l&eacute;e et flexible.</p><p id="-77vrpi_84"><b id="-77vrpi_88">La question &agrave; laquelle ils r&eacute;pondent :</b> &quot;Comment, quand et quel objet doit &ecirc;tre cr&eacute;&eacute; ?&quot;</p><p id="-77vrpi_85"><b id="-77vrpi_89">Exemples :</b> Singleton, Factory, Builder, Prototype.</p><p id="-77vrpi_86"><b id="-77vrpi_90">Analogie :</b> C'est le service d'admission d'un h&ocirc;pital. Il d&eacute;cide comment un nouveau patient (objet) est enregistr&eacute; et assign&eacute; &agrave; une chambre, en fonction de son &eacute;tat.</p></div><div class="tabs__content" data-gtm="tab" id="-77vrpi_81" data-title="Patterns de Structure"><p id="-77vrpi_91"><b id="-77vrpi_95">Leur r&ocirc;le :</b> Organiser les classes et les objets pour former des structures plus grandes et plus complexes.</p><p id="-77vrpi_92"><b id="-77vrpi_96">La question &agrave; laquelle ils r&eacute;pondent :</b> &quot;Comment assembler des objets pour qu'ils collaborent ?&quot;</p><p id="-77vrpi_93"><b id="-77vrpi_97">Exemples :</b> Adapter, Decorator, Facade, Composite, Proxy.</p><p id="-77vrpi_94"><b id="-77vrpi_98">Analogie :</b> C'est l'agencement des pi&egrave;ces dans une maison. Comment le salon, la cuisine et les chambres sont-ils connect&eacute;s pour former un tout coh&eacute;rent ?</p></div><div class="tabs__content" data-gtm="tab" id="-77vrpi_82" data-title="Patterns Comportementaux"><p id="-77vrpi_99"><b id="-77vrpi_103">Leur r&ocirc;le :</b> G&eacute;rer les algorithmes et la r&eacute;partition des responsabilit&eacute;s entre les objets.</p><p id="-77vrpi_100"><b id="-77vrpi_104">La question &agrave; laquelle ils r&eacute;pondent :</b> &quot;Comment les objets communiquent-ils entre eux ?&quot;</p><p id="-77vrpi_101"><b id="-77vrpi_105">Exemples :</b> Strategy, Observer, Command, Template Method, State.</p><p id="-77vrpi_102"><b id="-77vrpi_106">Analogie :</b> C'est le syst&egrave;me de communication dans une tour de contr&ocirc;le a&eacute;rienne. Comment les messages sont-ils pass&eacute;s entre les pilotes et les contr&ocirc;leurs pour &eacute;viter les collisions ?</p></div></div></section></section><section class="chapter"><h2 id="pour-aller-plus-loin-introduction-aux-principes-s-o-l-i-d" data-toc="pour-aller-plus-loin-introduction-aux-principes-s-o-l-i-d">Pour aller plus loin : Introduction aux Principes S.O.L.I.D.</h2><p id="-77vrpi_107">Les Design Patterns n'existent pas dans le vide. Ils sont souvent l'incarnation de principes de conception fondamentaux. Les plus c&eacute;l&egrave;bres sont les principes <span class="control" id="-77vrpi_111">S.O.L.I.D.</span>, d&eacute;finis par Robert C. Martin (&quot;Uncle Bob&quot;).</p><p id="-77vrpi_108">Comprendre ces principes vous aidera &agrave; saisir le &quot;pourquoi&quot; derri&egrave;re la structure de nombreux patterns.</p><ul class="list _bullet" id="-77vrpi_109"><li class="list__item" id="-77vrpi_112"><p id="-77vrpi_117"><span class="control" id="-77vrpi_119">S - Single Responsibility Principle (Principe de responsabilit&eacute; unique) :</span></p><ul class="list _bullet" id="-77vrpi_118"><li class="list__item" id="-77vrpi_120"><p id="-77vrpi_122"><span class="control" id="-77vrpi_123">Id&eacute;e :</span> Une classe ne devrait avoir qu'une seule raison de changer.</p></li><li class="list__item" id="-77vrpi_121"><p id="-77vrpi_124"><span class="control" id="-77vrpi_125">Pourquoi ?</span> &Eacute;vite les classes &quot;couteau suisse&quot; qui font tout et qui sont fragiles au moindre changement.</p></li></ul></li><li class="list__item" id="-77vrpi_113"><p id="-77vrpi_126"><span class="control" id="-77vrpi_128">O - Open/Closed Principle (Principe ouvert/ferm&eacute;) :</span></p><ul class="list _bullet" id="-77vrpi_127"><li class="list__item" id="-77vrpi_129"><p id="-77vrpi_131"><span class="control" id="-77vrpi_132">Id&eacute;e :</span> Une entit&eacute; logicielle (classe, module, fonction) doit &ecirc;tre ouverte &agrave; l'extension, mais ferm&eacute;e &agrave; la modification.</p></li><li class="list__item" id="-77vrpi_130"><p id="-77vrpi_133"><span class="control" id="-77vrpi_134">Pourquoi ?</span> Pour pouvoir ajouter de nouvelles fonctionnalit&eacute;s sans toucher au code existant et test&eacute;, r&eacute;duisant ainsi les risques de r&eacute;gression. C'est le c&oelig;ur de nombreux patterns comme Strategy ou Decorator.</p></li></ul></li><li class="list__item" id="-77vrpi_114"><p id="-77vrpi_135"><span class="control" id="-77vrpi_137">L - Liskov Substitution Principle (Principe de substitution de Liskov) :</span></p><ul class="list _bullet" id="-77vrpi_136"><li class="list__item" id="-77vrpi_138"><p id="-77vrpi_140"><span class="control" id="-77vrpi_141">Id&eacute;e :</span> Une instance d'une classe enfant doit pouvoir remplacer une instance de sa classe parent sans alt&eacute;rer la coh&eacute;rence du programme.</p></li><li class="list__item" id="-77vrpi_139"><p id="-77vrpi_142"><span class="control" id="-77vrpi_143">Pourquoi ?</span> Garantit que votre h&eacute;ritage est correct et que le polymorphisme fonctionne comme pr&eacute;vu.</p></li></ul></li><li class="list__item" id="-77vrpi_115"><p id="-77vrpi_144"><span class="control" id="-77vrpi_146">I - Interface Segregation Principle (Principe de s&eacute;gr&eacute;gation des interfaces) :</span></p><ul class="list _bullet" id="-77vrpi_145"><li class="list__item" id="-77vrpi_147"><p id="-77vrpi_149"><span class="control" id="-77vrpi_150">Id&eacute;e :</span> Un client ne devrait pas &ecirc;tre forc&eacute; de d&eacute;pendre de m&eacute;thodes qu'il n'utilise pas. Pr&eacute;f&eacute;rez plusieurs petites interfaces sp&eacute;cifiques &agrave; une seule grosse interface g&eacute;n&eacute;rale.</p></li><li class="list__item" id="-77vrpi_148"><p id="-77vrpi_151"><span class="control" id="-77vrpi_152">Pourquoi ?</span> Rend le code plus l&eacute;ger et plus pr&eacute;cis, en &eacute;vitant les impl&eacute;mentations &quot;vides&quot; de m&eacute;thodes inutiles.</p></li></ul></li><li class="list__item" id="-77vrpi_116"><p id="-77vrpi_153"><span class="control" id="-77vrpi_155">D - Dependency Inversion Principle (Principe d'inversion des d&eacute;pendances) :</span></p><ul class="list _bullet" id="-77vrpi_154"><li class="list__item" id="-77vrpi_156"><p id="-77vrpi_158"><span class="control" id="-77vrpi_159">Id&eacute;e :</span> Les modules de haut niveau ne doivent pas d&eacute;pendre des modules de bas niveau. Les deux doivent d&eacute;pendre d'abstractions (interfaces).</p></li><li class="list__item" id="-77vrpi_157"><p id="-77vrpi_160"><span class="control" id="-77vrpi_161">Pourquoi ?</span> C'est le secret du d&eacute;couplage ! Cela permet de changer une impl&eacute;mentation (ex: passer d'une base de donn&eacute;es MySQL &agrave; PostgreSQL) sans impacter le reste de l'application. C'est la base de l'injection de d&eacute;pendances et des patterns Factory.</p></li></ul></li></ul><aside class="prompt" data-type="warning" data-title="" id="-77vrpi_110"><p>Ne vous inqui&eacute;tez pas si tout n'est pas clair imm&eacute;diatement. Consid&eacute;rez S.O.L.I.D. comme une boussole. Au fur et &agrave; mesure que nous explorerons les patterns, nous verrons comment ils appliquent brillamment ces principes.</p></aside></section><section class="chapter"><h2 id="pr-paration-du-projet-fil-rouge" data-toc="pr-paration-du-projet-fil-rouge">Pr&eacute;paration du Projet &quot;Fil Rouge&quot;</h2><p id="-77vrpi_162">Pour rendre l'apprentissage concret, nous allons travailler sur un projet fil rouge tout au long de ce cours : une application de gestion de biblioth&egrave;que. Les exercices consisteront &agrave; am&eacute;liorer son architecture en utilisant les patterns que nous d&eacute;couvrirons.</p><p id="-77vrpi_163">Voici la structure de base du projet. Vous pouvez la mettre en place dans votre IDE pr&eacute;f&eacute;r&eacute;.</p><div class="tabs" id="-77vrpi_164" data-anchors="[-77vrpi_166,-77vrpi_167,-77vrpi_168,-77vrpi_169,-77vrpi_170]"><div class="tabs__content" data-gtm="tab" id="-77vrpi_166" data-title="pom.xml"><p id="-77vrpi_171">Fichier de configuration Maven avec les d&eacute;pendances n&eacute;cessaires.</p><div class="code-block" data-lang="markup" data-title="XML">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;3.2.0&lt;/version&gt;
+        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+    &lt;/parent&gt;
+    &lt;groupId&gt;fr.formation.spring&lt;/groupId&gt;
+    &lt;artifactId&gt;library-app&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;name&gt;library-app&lt;/name&gt;
+    &lt;description&gt;Projet fil rouge pour le cours de Design Patterns&lt;/description&gt;
+    &lt;properties&gt;
+        &lt;java.version&gt;17&lt;/java.version&gt;
+    &lt;/properties&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+            &lt;artifactId&gt;h2&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+            &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+            &lt;optional&gt;true&lt;/optional&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+&lt;/project&gt;
+</div></div><div class="tabs__content" data-gtm="tab" id="-77vrpi_167" data-title="application.properties"><p id="-77vrpi_173">Configuration de la base de donn&eacute;es en m&eacute;moire H2.</p><div class="code-block" data-lang="properties" data-title="Properties">
+# Configuration du port du serveur
+server.port=8080
+
+# Configuration de la source de données H2
+
+spring.datasource.url=jdbc:h2:mem:librarydb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+
+# Configuration de JPA/Hibernate
+
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# Activer la console H2
+
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+</div></div><div class="tabs__content" data-gtm="tab" id="-77vrpi_168" data-title="Entit&eacute;s JPA"><p id="-77vrpi_175">Cr&eacute;ez un package <code class="code" id="-77vrpi_182">fr.formation.spring.app.entities</code>.</p><p id="-77vrpi_176"><span class="control" id="-77vrpi_183">Book.java</span></p><div class="code-block" data-lang="java" data-title="Java">
+package fr.formation.spring.app.entities;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Set;
+
+@Entity
+@Getter
+@Setter
+public class Book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String title; // Titre du livre
+    private String isbn;  // Numéro ISBN unique
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Author author; // L'auteur du livre
+
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(
+            name = &quot;book_category&quot;,
+            joinColumns = @JoinColumn(name = &quot;book_id&quot;),
+            inverseJoinColumns = @JoinColumn(name = &quot;category_id&quot;)
+    )
+    private Set&lt;Category&gt; categories; // Catégories du livre
+}
+</div><p id="-77vrpi_178"><span class="control" id="-77vrpi_184">Author.java</span></p><div class="code-block" data-lang="java" data-title="Java">
+package fr.formation.spring.app.entities;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+public class Author {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name; // Nom complet de l'auteur
+}
+</div><p id="-77vrpi_180"><span class="control" id="-77vrpi_185">Category.java</span></p><div class="code-block" data-lang="java" data-title="Java">
+package fr.formation.spring.app.entities;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+public class Category {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name; // Nom de la catégorie (ex: &quot;Science-Fiction&quot;)
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="-77vrpi_169" data-title="Repositories"><p id="-77vrpi_186">Cr&eacute;ez un package <code class="code" id="-77vrpi_194">fr.formation.spring.app.repositories</code>.</p><p id="-77vrpi_187">Ces interfaces permettent &agrave; Spring Data JPA de g&eacute;n&eacute;rer les requ&ecirc;tes pour nous.</p><p id="-77vrpi_188"><span class="control" id="-77vrpi_195">BookRepository.java</span></p><div class="code-block" data-lang="java" data-title="Java">
+package fr.formation.spring.app.repositories;
+
+import fr.formation.spring.app.entities.Book;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface BookRepository extends JpaRepository&lt;Book, Long&gt; {
+}
+</div><p id="-77vrpi_190"><span class="control" id="-77vrpi_196">AuthorRepository.java</span></p><div class="code-block" data-lang="java" data-title="Java">
+package fr.formation.spring.app.repositories;
+
+import fr.formation.spring.app.entities.Author;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface AuthorRepository extends JpaRepository&lt;Author, Long&gt; {
+}
+</div><p id="-77vrpi_192"><span class="control" id="-77vrpi_197">CategoryRepository.java</span></p><div class="code-block" data-lang="java" data-title="Java">
+package fr.formation.spring.app.repositories;
+
+import fr.formation.spring.app.entities.Category;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CategoryRepository extends JpaRepository&lt;Category, Long&gt; {
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="-77vrpi_170" data-title="Data Seeder"><p id="-77vrpi_198">Cr&eacute;ez une classe dans un package <code class="code" id="-77vrpi_201">fr.formation.spring.app.config</code> pour hydrater la base avec des donn&eacute;es de test au d&eacute;marrage.</p><p id="-77vrpi_199"><span class="control" id="-77vrpi_202">DataInitializer.java</span></p><div class="code-block" data-lang="java" data-title="Java">
+package fr.formation.spring.app.config;
+
+import fr.formation.spring.app.entities.Author;
+import fr.formation.spring.app.entities.Book;
+import fr.formation.spring.app.entities.Category;
+import fr.formation.spring.app.repositories.BookRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.Set;
+
+@Configuration
+public class DataInitializer {
+
+    @Bean
+    public CommandLineRunner initDatabase(BookRepository bookRepository) {
+        return args -&gt; {
+            // Catégories
+            Category sf = new Category();
+            sf.setName(&quot;Science-Fiction&quot;);
+
+            Category fantasy = new Category();
+            fantasy.setName(&quot;Fantasy&quot;);
+
+            // Auteurs
+            Author herbert = new Author();
+            herbert.setName(&quot;Frank Herbert&quot;);
+
+            Author tolkien = new Author();
+            tolkien.setName(&quot;J.R.R. Tolkien&quot;);
+
+            // Livres
+            Book dune = new Book();
+            dune.setTitle(&quot;Dune&quot;);
+            dune.setIsbn(&quot;978-2266286260&quot;);
+            dune.setAuthor(herbert);
+            dune.setCategories(Set.of(sf));
+
+            Book lotr = new Book();
+            lotr.setTitle(&quot;The Lord of the Rings&quot;);
+            lotr.setIsbn(&quot;978-0618640157&quot;);
+            lotr.setAuthor(tolkien);
+            lotr.setCategories(Set.of(fantasy));
+
+            // Sauvegarde en cascade grâce à CascadeType.PERSIST
+            bookRepository.save(dune);
+            bookRepository.save(lotr);
+
+            System.out.println(&quot;Database has been initialized with test data.&quot;);
+        };
+    }
+}
+</div></div></div><p id="-77vrpi_165">Une fois ce projet configur&eacute;, lancez votre application. Vous devriez voir dans la console le message <code class="code" id="-77vrpi_203">Database has been initialized...</code> et pouvoir acc&eacute;der &agrave; la console H2 sur <code class="code" id="-77vrpi_204">http://localhost:8080/h2-console</code> (utilisez l'URL JDBC <code class="code" id="-77vrpi_205">jdbc:h2:mem:librarydb</code>).</p></section><section class="chapter"><h2 id="exercice-1-analyse-d-un-code-smell" data-toc="exercice-1-analyse-d-un-code-smell">Exercice 1 : Analyse d'un &quot;Code Smell&quot;</h2><p id="-77vrpi_206">Ce premier exercice n'implique pas d'&eacute;crire du code, mais d'aiguiser votre regard de concepteur. Dans notre biblioth&egrave;que, nous devons pouvoir notifier les utilisateurs de diff&eacute;rentes mani&egrave;res (email, SMS, notification push dans une app mobile).</p><p id="-77vrpi_207">Voici une premi&egrave;re impl&eacute;mentation &quot;na&iuml;ve&quot; d'un service de notification.</p><div class="code-block" data-lang="java">
+package fr.formation.spring.app.services;
+
+// A NE PAS COPIER DANS LE PROJET, CECI EST UN EXEMPLE A ANALYSER
+public class NotificationService {
+
+    /**
+     * Envoie une notification à un utilisateur.
+     * @param user le nom de l'utilisateur
+     * @param message le message à envoyer
+     * @param type le type de notification (&quot;EMAIL&quot;, &quot;SMS&quot;, &quot;PUSH&quot;)
+     */
+    public void sendNotification(String user, String message, String type) {
+        if (&quot;EMAIL&quot;.equalsIgnoreCase(type)) {
+            // Logique pour configurer le serveur SMTP et envoyer un email
+            System.out.println(&quot;--- ENVOI EMAIL ---&quot;);
+            System.out.println(&quot;À: &quot; + user + &quot;@email.com&quot;);
+            System.out.println(&quot;Message: &quot; + message);
+            System.out.println(&quot;--------------------&quot;);
+        } else if (&quot;SMS&quot;.equalsIgnoreCase(type)) {
+            // Logique pour se connecter à une gateway SMS
+            System.out.println(&quot;--- ENVOI SMS ---&quot;);
+            System.out.println(&quot;Numéro: +33612345678 (pour &quot; + user + &quot;)&quot;);
+            System.out.println(&quot;Message: &quot; + message);
+            System.out.println(&quot;-----------------&quot;);
+        } else if (&quot;PUSH&quot;.equalsIgnoreCase(type)) {
+            // Logique pour se connecter à l'API Firebase/Apple Push
+            System.out.println(&quot;--- NOTIFICATION PUSH ---&quot;);
+            System.out.println(&quot;Device Token pour: &quot; + user);
+            System.out.println(&quot;Message: &quot; + message);
+            System.out.println(&quot;-------------------------&quot;);
+        } else {
+            System.out.println(&quot;Type de notification non supporté: &quot; + type);
+        }
+    }
+}
+
+</div><p id="-77vrpi_209"><span class="control" id="-77vrpi_212">Votre mission :</span></p><ol class="list _decimal" id="-77vrpi_210" type="1"><li class="list__item" id="-77vrpi_213"><p id="-77vrpi_217">Lisez attentivement ce code.</p></li><li class="list__item" id="-77vrpi_214"><p id="-77vrpi_218">Quels sont, selon vous, les probl&egrave;mes de conception de cette classe ?</p></li><li class="list__item" id="-77vrpi_215"><p id="-77vrpi_219">Imaginez que demain, votre chef de projet vous demande d'ajouter un nouveau type de notification : &quot;Slack&quot;. Quelles modifications devriez-vous faire ? Est-ce que cela vous semble optimal ?</p></li><li class="list__item" id="-77vrpi_216"><p id="-77vrpi_220">Sans encore conna&icirc;tre les patterns, comment essaieriez-vous intuitivement d'am&eacute;liorer ce code pour le rendre plus flexible et plus facile &agrave; maintenir ?</p></li></ol><section class="chapter"><div class="collapse"><div class="collapse__title"><h3 id="correction-exercice-1" data-toc="correction-exercice-1">Correction exercice 1</h3></div><div class="collapse__content"><p id="-77vrpi_221">Excellente analyse ! Voici les points cl&eacute;s que vous avez probablement identifi&eacute;s.</p><ol class="list _decimal" id="-77vrpi_222" type="1"><li class="list__item" id="-77vrpi_224"><p id="-77vrpi_227"><span class="control" id="-77vrpi_229">Probl&egrave;mes de conception :</span></p><ul class="list _bullet" id="-77vrpi_228"><li class="list__item" id="-77vrpi_230"><p id="-77vrpi_235"><span class="control" id="-77vrpi_236">Violation du Principe de Responsabilit&eacute; Unique (S de SOLID) :</span> La classe <code class="code" id="-77vrpi_237">NotificationService</code> g&egrave;re &agrave; la fois la logique de &quot;s&eacute;lection&quot; du canal et la logique d'impl&eacute;mentation de <span class="emphasis" id="-77vrpi_238">chaque</span> canal. Elle a plusieurs raisons de changer.</p></li><li class="list__item" id="-77vrpi_231"><p id="-77vrpi_239"><span class="control" id="-77vrpi_240">Violation du Principe Ouvert/Ferm&eacute; (O de SOLID) :</span> La classe est <span class="control" id="-77vrpi_241">ferm&eacute;e &agrave; l'extension</span> (on ne peut pas ajouter un nouveau type sans la modifier) et <span class="control" id="-77vrpi_242">ouverte &agrave; la modification</span> (on doit &eacute;diter son code source pour tout changement). C'est l'exact oppos&eacute; du principe.</p></li><li class="list__item" id="-77vrpi_232"><p id="-77vrpi_243"><span class="control" id="-77vrpi_244">Mauvaise maintenabilit&eacute; :</span> La structure <code class="code" id="-77vrpi_245">if-else if</code> va grandir ind&eacute;finiment avec chaque nouveau type de notification, rendant la m&eacute;thode <code class="code" id="-77vrpi_246">sendNotification</code> de plus en plus complexe et difficile &agrave; lire.</p></li><li class="list__item" id="-77vrpi_233"><p id="-77vrpi_247"><span class="control" id="-77vrpi_248">Fragilit&eacute; :</span> Une erreur dans la logique d'un type de notification (ex: une faute de frappe dans le <code class="code" id="-77vrpi_249">if</code>) peut impacter tous les autres.</p></li><li class="list__item" id="-77vrpi_234"><p id="-77vrpi_250"><span class="control" id="-77vrpi_251">Difficult&eacute; &agrave; tester :</span> Tester unitairement la logique d'envoi de SMS est difficile car elle est noy&eacute;e au milieu des autres logiques.</p></li></ul></li><li class="list__item" id="-77vrpi_225"><p id="-77vrpi_252"><span class="control" id="-77vrpi_254">Ajout de la notification &quot;Slack&quot; :</span></p><ul class="list _bullet" id="-77vrpi_253"><li class="list__item" id="-77vrpi_255"><p id="-77vrpi_257">Il faudrait ajouter un nouveau bloc <code class="code" id="-77vrpi_258">else if (&quot;SLACK&quot;.equalsIgnoreCase(type)) { ... }</code> dans la m&eacute;thode <code class="code" id="-77vrpi_259">sendNotification</code>.</p></li><li class="list__item" id="-77vrpi_256"><p id="-77vrpi_260">Cela implique de <span class="control" id="-77vrpi_261">modifier une classe existante et d&eacute;j&agrave; en production</span>, ce qui est risqu&eacute;. Ce n'est absolument pas optimal.</p></li></ul></li><li class="list__item" id="-77vrpi_226"><p id="-77vrpi_262"><span class="control" id="-77vrpi_264">Pistes d'am&eacute;lioration intuitive :</span></p><ul class="list _bullet" id="-77vrpi_263"><li class="list__item" id="-77vrpi_265"><p id="-77vrpi_269">L'id&eacute;e serait de <span class="control" id="-77vrpi_270">s&eacute;parer les responsabilit&eacute;s</span>. On pourrait avoir une &quot;chose&quot; par type de notification.</p></li><li class="list__item" id="-77vrpi_266"><p id="-77vrpi_271">Par exemple, cr&eacute;er des classes distinctes : <code class="code" id="-77vrpi_272">EmailNotifier</code>, <code class="code" id="-77vrpi_273">SmsNotifier</code>, <code class="code" id="-77vrpi_274">PushNotifier</code>.</p></li><li class="list__item" id="-77vrpi_267"><p id="-77vrpi_275">Ces classes pourraient toutes partager une m&eacute;thode commune, comme <code class="code" id="-77vrpi_276">send(user, message)</code>. On pourrait les faire impl&eacute;menter une interface commune, par exemple <code class="code" id="-77vrpi_277">Notifier</code>.</p></li><li class="list__item" id="-77vrpi_268"><p id="-77vrpi_278">Le <code class="code" id="-77vrpi_279">NotificationService</code> n'aurait plus qu'&agrave; choisir la bonne classe (<code class="code" id="-77vrpi_280">EmailNotifier</code>, <code class="code" id="-77vrpi_281">SmsNotifier</code>...) et &agrave; appeler sa m&eacute;thode <code class="code" id="-77vrpi_282">send</code>.</p></li></ul></li></ol><p id="-77vrpi_223">Si vous &ecirc;tes arriv&eacute; &agrave; cette conclusion, f&eacute;licitations ! Vous venez de &quot;r&eacute;inventer&quot; l'essence de deux des plus importants patterns que nous allons &eacute;tudier : <span class="control" id="-77vrpi_283">Factory Method</span> (pour cr&eacute;er le bon notificateur) et <span class="control" id="-77vrpi_284">Strategy</span> (pour utiliser l'algorithme d'envoi interchangeable).</p></div></div></section></section><section class="chapter"><h2 id="auto-valuation" data-toc="auto-valuation">Auto-&eacute;valuation</h2><p id="-77vrpi_285">Testez vos connaissances sur ce premier chapitre. Ne vous inqui&eacute;tez pas, l'objectif est de vous aider &agrave; consolider ce que vous avez appris.</p><aside class="prompt" data-type="warning" data-title="" id="-77vrpi_286"><p>Les corrections de cette auto-&eacute;valuation se trouvent &agrave; la fin de l'ensemble du support de cours pour ne pas vous tenter !</p></aside><p id="-77vrpi_287"><span class="control" id="-77vrpi_291">Questions &agrave; Choix Multiple (QCM)</span></p><ol class="list _decimal" id="-77vrpi_288" type="1"><li class="list__item" id="-77vrpi_292"><p id="-77vrpi_296">Quelle est la d&eacute;finition la plus pr&eacute;cise d'un Design Pattern ?</p><ul class="list _bullet" id="-77vrpi_297"><li class="list__item" id="-77vrpi_298"><p id="-77vrpi_302">a) Un morceau de code r&eacute;utilisable que l'on peut copier-coller.</p></li><li class="list__item" id="-77vrpi_299"><p id="-77vrpi_303">b) Une biblioth&egrave;que open-source qui r&eacute;sout des probl&egrave;mes courants.</p></li><li class="list__item" id="-77vrpi_300"><p id="-77vrpi_304">c) Un plan ou une description d'une solution &eacute;prouv&eacute;e &agrave; un probl&egrave;me de conception r&eacute;current.</p></li><li class="list__item" id="-77vrpi_301"><p id="-77vrpi_305">d) Un algorithme sp&eacute;cifique pour trier des donn&eacute;es.</p></li></ul></li><li class="list__item" id="-77vrpi_293"><p id="-77vrpi_306">Lequel de ces patterns appartient &agrave; la cat&eacute;gorie des <span class="control" id="-77vrpi_308">Patterns de Cr&eacute;ation</span>?</p><ul class="list _bullet" id="-77vrpi_307"><li class="list__item" id="-77vrpi_309"><p id="-77vrpi_313">a) Adapter</p></li><li class="list__item" id="-77vrpi_310"><p id="-77vrpi_314">b) Observer</p></li><li class="list__item" id="-77vrpi_311"><p id="-77vrpi_315">c) Facade</p></li><li class="list__item" id="-77vrpi_312"><p id="-77vrpi_316">d) Builder</p></li></ul></li><li class="list__item" id="-77vrpi_294"><p id="-77vrpi_317">Quel principe S.O.L.I.D. est le plus directement viol&eacute; par une classe qui g&egrave;re la connexion &agrave; la base de donn&eacute;es, la logique m&eacute;tier ET l'affichage HTML ?</p><ul class="list _bullet" id="-77vrpi_318"><li class="list__item" id="-77vrpi_319"><p id="-77vrpi_323">a) Open/Closed Principle</p></li><li class="list__item" id="-77vrpi_320"><p id="-77vrpi_324">b) Single Responsibility Principle</p></li><li class="list__item" id="-77vrpi_321"><p id="-77vrpi_325">c) Liskov Substitution Principle</p></li><li class="list__item" id="-77vrpi_322"><p id="-77vrpi_326">d) Dependency Inversion Principle</p></li></ul></li><li class="list__item" id="-77vrpi_295"><p id="-77vrpi_327">Dans un diagramme de classes UML, quel symbole repr&eacute;sente une relation de <span class="control" id="-77vrpi_329">Composition</span>?</p><ul class="list _bullet" id="-77vrpi_328"><li class="list__item" id="-77vrpi_330"><p id="-77vrpi_334">a) Une fl&egrave;che simple <code class="code" id="-77vrpi_335">--&gt;</code></p></li><li class="list__item" id="-77vrpi_331"><p id="-77vrpi_336">b) Une ligne avec un losange vide <code class="code" id="-77vrpi_337">&lt;&gt;--</code></p></li><li class="list__item" id="-77vrpi_332"><p id="-77vrpi_338">c) Une ligne avec un losange plein <code class="code" id="-77vrpi_339">&lt;*&gt;--</code></p></li><li class="list__item" id="-77vrpi_333"><p id="-77vrpi_340">d) Une fl&egrave;che en pointill&eacute; avec un triangle <code class="code" id="-77vrpi_341">..|&gt;</code></p></li></ul></li></ol><p id="-77vrpi_289"><span class="control" id="-77vrpi_342">Questions Ouvertes</span></p><ol class="list _decimal" id="-77vrpi_290" type="1" start="5"><li class="list__item" id="-77vrpi_343"><p id="-77vrpi_345">Expliquez avec vos propres mots pourquoi le fait d'avoir un &quot;vocabulaire commun&quot; gr&acirc;ce aux patterns est un avantage majeur pour une &eacute;quipe de d&eacute;veloppement.</p></li><li class="list__item" id="-77vrpi_344"><p id="-77vrpi_346">Quelle est la diff&eacute;rence fondamentale entre le <span class="control" id="-77vrpi_347">Principe Ouvert/Ferm&eacute;</span> et le **Principe de Responsabilit&eacute; Unique ** ?</p></li></ol></section><section class="chapter"><h2 id="conclusion" data-toc="conclusion">Conclusion</h2><p id="-77vrpi_348">F&eacute;licitations, vous avez franchi la premi&egrave;re &eacute;tape ! Vous comprenez maintenant ce qu'est un Design Pattern, d'o&ugrave; il vient, et pourquoi il est si crucial dans la carri&egrave;re d'un concepteur d&eacute;veloppeur d'applications.</p><p id="-77vrpi_349">Vous avez d&eacute;couvert :</p><ul class="list _bullet" id="-77vrpi_350"><li class="list__item" id="-77vrpi_352"><p id="-77vrpi_356">Que les patterns sont des <span class="control" id="-77vrpi_357">recettes de conception</span>, pas du code pr&ecirc;t &agrave; l'emploi.</p></li><li class="list__item" id="-77vrpi_353"><p id="-77vrpi_358">Qu'ils sont class&eacute;s en <span class="control" id="-77vrpi_359">trois grandes familles</span> (Cr&eacute;ation, Structure, Comportement) qui nous aident &agrave; nous orienter.</p></li><li class="list__item" id="-77vrpi_354"><p id="-77vrpi_360">Qu'ils s'appuient sur des <span class="control" id="-77vrpi_361">principes de conception solides</span> (S.O.L.I.D.) qui visent &agrave; cr&eacute;er du code de haute qualit&eacute;.</p></li><li class="list__item" id="-77vrpi_355"><p id="-77vrpi_362">Comment lire les <span class="control" id="-77vrpi_363">diagrammes UML</span> qui nous serviront de carte tout au long de ce voyage.</p></li></ul><p id="-77vrpi_351">Nous avons pos&eacute; les fondations. Dans le prochain chapitre, nous allons commencer &agrave; construire notre &eacute;difice en explorant la premi&egrave;re famille : les <span class="control" id="-77vrpi_364">Patterns de Cr&eacute;ation</span>. Pr&eacute;parez-vous &agrave; devenir un ma&icirc;tre dans l'art de cr&eacute;er des objets de mani&egrave;re &eacute;l&eacute;gante et flexible</p></section><div class="last-modified">25 juillet 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="002-00-creation-patterns.html" class="navigation-links__next">Les Patterns de Cr&eacute;ation : L'Art de Fabriquer des Objets</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

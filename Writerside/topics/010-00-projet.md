@@ -144,7 +144,7 @@ NotifierFactory ..> Notifier : crée
 
 @enduml
 ```
-![promo-2-Architecture_du_Système_de_Promotions.svg](promo-2-Architecture_du_Système_de_Promotions.svg)
+![promo-2-Architecture_du_Système_de_Promotions.svg](promo-2-Architecture_du_Systeme_de_Promotions.svg)
 
 
 
@@ -189,7 +189,7 @@ Facade --> ClientController : ok
 deactivate Facade
 @enduml
 ```
-![promo-1-Séquence_de_Lancement_d_une_Campagne_de_Promotion.svg](promo-1-Séquence_de_Lancement_d_une_Campagne_de_Promotion.svg)
+![promo-1-Séquence_de_Lancement_d_une_Campagne_de_Promotion.svg](promo-1-Sequence_de_Lancement_d_une_Campagne_de_Promotion.svg)
 
 #### Correction Partie 2 : Implémentation
 
